@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Kalkulator Dengan JS</title>
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+	<script type="text/javascript">
+		function operasi(operator){
+			var a = parseInt(document.getElementById("a").value);
+			var b = parseInt(document.getElementById("b").value);
+
+			if(!a && !b){
+				alert("Angka 1 & Angka 2 Kosong");
+			}
+			else if(!b){
+				alert("Angka 2 Kosong");
+			}
+			else if(!a){
+				alert("Angka 1 Kosong");
+			}
+
+			switch(operator){
+				case 1:
+					var c = a+b;
+					alert("Hasilnya adalah "+c)
+				break;
+				case 2:
+					var c = a-b;
+					alert("Hasilnya adalah "+c)
+				break;
+				case 3:
+					var c = a*b;
+					alert("Hasilnya adalah "+c)
+				break;
+				case 4:
+					var c = a/b;
+					alert("Hasilnya adalah "+c)
+				break
+			}
+		}
+	</script>
+	<style type="text/css">
+		#batas{
+			margin: 30px 0px 0px 450px;
+		}
+		.btn{
+			margin-left: 10px;
+			width: 80px;
+			height: 50px;
+			background-color: #4CAF50;
+			border-style: none;
+			font-size: 25px;
+			color: white;
+		}
+		.kotak{
+			margin-left: 8px;	
+			width: 450px;
+			height: 30px;
+			font-size: 25px;
+		}
+		.hapus{
+			background-color: #f44336;
+		}
+	</style>
+</head>
+<body>
+	<h2 align="center" style="margin-top: 120px;">Kalkulator Sederhana</h2>
+	<div id="batas">
+		<form>
+			<table>
+				<tr>
+					<td><input type="text" id="a" name="a" placeholder="Angka 1" class="kotak"></td>
+				</tr>
+				<tr>
+					<td><input type="text" id="b" name="b" placeholder="Angka 2" class="kotak"></td>
+				</tr>
+				<!-- <tr>
+					<td><input type="text" id="hasil" name="hasil" placeholder="Hasil" class="kotak"></td>
+				</tr> -->
+			</table>
+			<input type="button" value="+" onclick="operasi(1)" class="btn">
+			<input type="button" value="-" onclick="operasi(2)" class="btn">
+			<input type="button" value="x" onclick="operasi(3)" class="btn">
+			<input type="button" value="/" onclick="operasi(4)" class="btn">
+			<input type="reset" value="C" class="btn hapus">
+		</form>
+	</div>
+</body>
+</html>
